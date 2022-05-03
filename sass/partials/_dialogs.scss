@@ -1,0 +1,237 @@
+.dropdown-menu {
+    font-size: 1em;
+    box-sizing: border-box;
+    z-index: 1000;
+    max-width: 460px;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 5px;
+    background-color: white;
+    color: $color_text_darker;
+    box-shadow: 0 0 0 1px rgba(black,0.1), 0 3px 10px 0 rgba(black,0.2);
+    @include transition(all .6s ease-in-out);
+    -webkit-animation: panel-slide-down .6s ease-in-out forwards;
+    animation: panel-slide-down .6s ease-in-out forwards;
+    overflow: hidden;
+    border: none;
+
+    &.profile_dropdown {
+        min-width: 240px;
+    }
+
+    &.show {
+        visibility: visible;
+    }
+
+    li {
+        display: block;
+        padding: 0;
+        margin:0;
+
+        > *, > a {
+            padding: 10px 15px;
+            display: flex;
+            width: 100%;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: capitalize;
+            line-height: normal;
+            align-items: center;
+            white-space: nowrap;
+
+            &:hover {
+                background: $color_white;
+                color: $brand_primary;
+            }
+        }
+    }
+}
+
+.caret {
+    display: inline-flex;
+    margin-left: 10px;
+
+    &:after {
+        vertical-align: .255em;
+        content: "";
+        border-top: .4em solid;
+        border-right: .35em solid transparent;
+        border-bottom: 0;
+        border-left: .35em solid transparent
+    }
+}
+
+@keyframes panel-slide-down{
+    0%,30% { 
+        margin-top:-15px;
+        opacity:0
+    }
+    to {
+        margin-top:0;
+        opacity:1
+    }
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.tooltip .arrow::before {
+    border-top-color: $brand_black !important;
+}
+
+.tooltip-inner {
+    font-size: 12px;
+    background-color: $brand_black;
+    border-radius: 5px;
+    padding: 6px 12px;
+}
+
+.modal-backdrop {
+    background-color: black;
+    display: none;
+}
+
+.modal-content {
+    border-radius: 15px;
+}
+
+.modal-dialog {
+    z-index: 2000;
+    max-width: 520px;
+
+    @include MQ-MAX(M) {
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+}
+
+@include MQ(L) {
+    .modal-sm {
+        max-width: 370px;
+    }
+
+    .modal-md {
+        max-width: 520px;
+    }
+}
+
+.modal {
+    z-index: 3000;
+
+    .modal-open & {
+        background-color: rgba(black, .90);
+        padding: none !important;
+    }
+
+    .modal-header {
+        border-bottom: none;
+        padding: 20px 15px 0;
+        justify-content: flex-start;
+
+        @include MQ(M) {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+
+    .modal-body {
+        position: relative;
+        padding: 30px 15px;
+
+        @include MQ(M) {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+    
+    .subtitle {
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .content-panel {
+        min-height: 250px;
+    }
+
+    .modal-footer {
+        border-top: none;
+        background-color: $color_white;
+        border-radius: 0 0 15px 15px;
+    }
+}
+
+.modal-title {
+    font-size: 18px;
+}
+
+/* Tables */
+table {
+    width: 100%;
+}
+
+
+.table {
+    margin-bottom: 0;
+    
+    &>:not(:first-child) {
+        border-top: none;
+    }
+
+    > thead, tbody, tfoot {
+        >tr {
+            >td, >th {
+                color: inherit;
+                border: none;
+                padding: 8px 10px;
+                vertical-align: middle;
+            } 
+        }
+    }
+    
+    > thead {
+        > tr > th {
+            border-bottom: 1px solid $border_grey;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 700;
+            color: $border_grey_dark;
+        }
+    }
+
+    .table {
+        background-color: transparent;
+    }
+}
+
+.table-responsive {
+    border: none;
+
+    @include MQ(L) {
+        overflow: visible;
+    }
+}
+
+.table-hover {
+    >tbody > tr {
+        cursor: pointer;
+        background-color: white;
+        border-bottom: 1px solid $color_white;
+        @include transition(all .4s ease-in-out 0s);
+        
+        &:hover {
+            background-color: $border_grey_light;
+        }
+    }
+}
+
+.propTable {
+    >tbody > tr {
+        background-color: white;
+        border-bottom: 1px solid $color_white;
+    }
+
+    > tfoot > tr {
+        border-bottom: none;
+    }
+}

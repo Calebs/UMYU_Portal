@@ -1,0 +1,457 @@
+// antialiasing mode font rendering
+html * {
+    @include font-smoothing;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+ul, ol {
+    padding: 0;
+    margin: 0;
+}
+
+mark {
+    padding: 5px 8.5px;
+    border-radius: 5px;
+    background-color: $brand_primary_light;
+}
+
+figure {
+    margin: 0;
+}
+
+body {
+    font-family: $body_font;
+    font-size: 1.6rem;
+    font-size: 16px;
+    word-spacing: -.01em;
+    letter-spacing: .01em;
+    color: $color_text;
+    width: 100%;
+    font-weight: 400;
+    position: relative;
+    line-height: 1.65;
+    background-color: $color_white;
+    
+    &.scroll_lock {
+        overflow: hidden;
+    }
+}
+
+.inlineSeparator {
+    display: inline-flex;
+    font-size: 1.25em;
+    padding: 0 7.5px;
+    color: inherit;
+    opacity: .75;
+    align-self: center;
+    vertical-align: center;
+    line-height: 1;
+}
+
+/* Backgrounds */
+
+.bg__white {
+    background-color: white !important;
+}
+
+.bg__off_white {
+    background-color: $color_white !important;
+}
+
+.bg__primary {
+    background-color: $brand_primary !important;
+}
+
+.bg__secondary {
+    background-color: $brand_accent !important;
+}
+
+.bg__secondary_light {
+    background-color: $brand_accent_light !important;
+}
+
+.bg__black {
+    background-color: $brand_black !important;
+}
+
+.color__primary {
+    color: $brand_primary !important;
+}
+
+.color__secondary {
+    color: $brand_accent !important;
+}
+
+.color__black {
+    color: $brand_black !important;
+}
+
+.color__grey_light {
+    color: $border_grey_dark !important;
+}
+
+.color__grey {
+    color: $border_grey_light !important;
+}
+
+.color__danger {
+    color: $brand_red !important;
+}
+
+.color__grey_dark {
+    color: $color_grey_dark !important;
+}
+
+.color__white {
+    color: $color_white !important;
+}
+
+.color__default {
+    color: $color_text !important;
+}
+
+.color__dark {
+    color: $color_text_darker !important;
+}
+
+
+.font-sm {
+    font-size: 12px !important;
+}
+
+.font-default {
+    font-size: 14px !important;
+}
+
+.font-md {
+    font-size: 16px !important;
+}
+
+.font-lg {
+    font-size: 18px !important;
+
+    @include MQ(M) {
+        font-size: 21px !important;
+    }
+}
+
+.font-heavy {
+    font-weight: 900;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-medium {
+    font-weight: 600;
+}
+
+.font-regular {
+    font-weight: 400;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text_clipped {
+    @include text_truncate();
+}
+
+.caps_upper {
+    text-transform: uppercase !important;
+}
+
+.caps_normal {
+    text-transform: none !important;
+}
+
+.container {
+    width: auto;
+    position: relative;
+    max-width: 1170px;
+
+    @include MQ(M) {
+        .mainContentWrapper & {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+}
+
+.container-fluid {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.content_narrow {
+    max-width: 970px;
+}
+
+.centered {
+    float: none;
+    margin: 0 auto;
+}
+.hidden {
+    display: none !important;
+}
+
+@include MQ-MAX(M) {
+    .hidden-sm {
+        display: none !important;
+    }
+
+    .text-center-sm {
+        text-align: center !important;
+    }
+}
+
+@include MQ(M) {
+    .visible_sm {
+        visibility: hidden;
+        opacity: 0;
+        display: none;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+h4 {
+    font-size: 21px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+p {
+    margin: 0;
+    @include break-inside(avoid);
+        
+    +p {
+        padding-top: .5em;
+    }
+}
+
+address, address span {
+    display: block;
+}
+
+.margin_top_sm {
+    margin-top: 10px !important;
+}
+
+.margin_top_md {
+    margin-top: 20px !important;
+}
+
+.margin_bottom_lg {
+    margin-bottom: 30px !important;
+}
+
+.margin_bottom_xl {
+    margin-bottom: 50px !important;
+}
+
+.margin_bottom_sm {
+    margin-bottom: 10px !important;
+}
+
+.margin_bottom_md {
+    margin-bottom: 20px !important;
+}
+
+.margin_top_lg {
+    margin-top: 30px !important;
+}
+
+.margin_top_xl {
+    margin-top: 50px !important;
+}
+
+.no_margin {
+    margin: 0 !important;
+}
+
+.padding-top-none {
+    padding-top: 0 !important;
+}
+
+.promptImageHolder {
+    max-width: 126px;
+    display: block;
+    margin-bottom: 20px;
+
+    > img {
+        display: block;
+        width: 100%;
+    }
+}
+
+.emptyStateWrapper {
+    position: relative;
+    padding: 40px 0;
+    max-width: 400px;
+    margin: auto;
+    z-index: 10;
+    color: $color_text_darker;
+}
+
+.emptyStateIlloHolder  {
+    margin: 20px auto;
+    clear: both;
+
+    img {
+        height: auto;
+        max-width: 128px;
+    }
+}
+
+// alert
+.alert {
+    display: block;
+    border: none;
+    padding: 0;
+    position: fixed;
+    width: 100%;
+    top: 80px;
+    z-index: 1000;
+    background-color: transparent;
+    color: $color_text;
+}
+
+.alertWrapper {
+    @include flexbox();
+    width: 100%;
+    border-radius: 10px;
+    flex-direction: column;
+    max-width: 320px;
+    margin: auto;
+    padding: 10px 15px;
+    background-color: white;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid $border_grey_light;
+    justify-content: space-between;
+}
+
+.alertBtn {
+    flex-shrink: 0;
+
+    @include MQ(S) {
+        margin-left: 15px;
+    }
+
+    @include MQ-MAX(S) {
+        margin-top: 15px;
+    }
+}
+
+.alert-primary .alertWrapper {
+    box-shadow: inset 4px 0 $brand_primary;
+    color: $brand_primary;
+}
+
+.alert-secondary .alertWrapper{
+    box-shadow: inset 4px 0 $brand_accent;
+    color: $brand_accent;
+}
+
+.alert-danger .alertWrapper{
+    box-shadow: inset 4px 0 $brand_red;
+    color: $brand_black;
+}
+
+.alert-success .alertWrapper{
+    box-shadow: inset 4px 0 $brand_accent;
+    color: $brand_black;
+}
+
+.alert-info .alertWrapper {
+    box-shadow: inset 4px 0 $brand_primary;
+    color: $brand_black;
+}
+
+.alert-dismissible .close {
+    top: 10px;
+}
+
+.badge {
+    border-radius: 25px;
+    padding: .85em 1.5em;
+    background-color: $border_grey;
+    color: inherit;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.badge-default {
+    background-color: $border_grey_light;
+    color: $color_text;
+}
+
+.badge-primary {
+    background-color: $brand_primary_light;
+    color: $brand_primary;
+}
+
+.badge-secondary {
+    background-color: $brand_accent_light;
+    color: $brand_accent;
+}
+
+.badge-info {
+    background-color: $brand_amba_light;
+    color: $brand_amba;
+}
+
+.badge-danger {
+    background-color: $brand_red_light;
+    color: $brand_red;
+}
+
+.badge-success {
+    background-color: $brand_accent_light;
+    color: $brand_accent;
+}

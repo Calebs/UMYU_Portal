@@ -1,0 +1,337 @@
+header[role="banner"] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $header_height;
+    z-index: $header-zindex;
+    @include font-smoothing;
+
+    [class*="container"] {
+        height: 100%;
+        position: relative;
+    }
+}
+
+.mainAppHeader {
+    @include transform(translate3d(0, 0, 0));
+    @include backface-visibility(hidden);
+    border-bottom: 1px solid $border_grey;
+    background-color: white;
+}
+
+.navbarWrapper {
+    @include flexbox();    
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.navbarGroupItem {
+    width: auto;
+    height: 100%;
+    display: block;
+    @include flexbox();
+    align-items: center;
+    position: relative;
+}
+
+.navBarItemLeft {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    z-index: 5;
+    float: left;
+    flex-shrink: 0;
+
+    > * + * {
+        padding-left: 20px;
+    }
+}
+
+.navBarItemRight {
+    float: right;
+    justify-content: flex-end;
+    z-index: 5;
+    flex-shrink: 0;
+}
+
+.navBarItemCenter {
+    flex-grow: 1;
+
+    @include MQ-MAX(L) {
+        width: 100%;
+        position: absolute;
+        left: 0;
+    }
+}
+
+.brand_img {
+    display: block;
+    
+    header[role="banner"]  &{
+        height: $header_height;
+    }
+}
+
+.logo_link {
+    padding: 0;
+    display: inline-block;
+    line-height: $header_height;
+    width: 95px;
+    position: relative;
+    height: 100%;
+        
+    >img {
+        vertical-align: middle;
+        display: inline-block;
+    }
+}
+
+.navMenu {
+    @include flexbox();
+    align-items: center;
+    width: 100%;
+}
+
+.navControlBtn {
+    position: relative;
+    margin-right: 20px;
+}
+
+.countBadge {
+    display: inline-flex;
+    padding: 3px 6px;
+    background-color: $brand_red;
+    color: $color_white;
+    font-size:11px;
+    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    line-height: 12px;
+    position: absolute;
+    white-space: nowrap;
+    top: 3px;
+    right: 3px;
+}
+
+.userAccountDetails {
+    @include flexbox();
+    align-items: center;
+
+    &:hover {
+        color: inherit
+    }
+}
+
+.dsp_tab_row {
+    @include flexbox();
+    align-items: center;
+
+    &.menuLinkItem {
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+.icon_holder {
+    flex-shrink: 0;
+
+    .dpd_nav_item & {
+        margin-right: 10px;
+        margin-bottom: 0;
+    }
+}
+
+.bankBranch_switcher {
+    margin-left: 20px;
+    border-left: 1px solid $border_grey_light;
+}
+
+.actViewToggle {
+    padding: 2px 15px;
+    color: $color_text_darker;
+    display: block;
+
+    &:hover, &:focus {
+        color: $brand_primary;
+    }
+}
+
+.switchToggleInner {
+    @include flexbox();
+    flex-direction: column;
+
+}
+
+.switchLabel {
+    font-size: 13px;
+    color: $border_grey_dark;
+}
+
+.activeBranch {
+    font-size: 16px;
+    line-height: 1;
+    @include flexbox();
+    align-items: center;
+
+    span + span {
+        margin-left: 15px;
+    }
+}
+
+// New styles
+
+.switchControlLink  {
+    display: block;
+    padding: 0 20px;
+    border-left: 1px solid $border_grey_light;
+    color: $color_text_darker;
+
+    &:hover, &:focus {
+        color: $brand_primary;
+    }
+}
+
+.valueLabel {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.navBtnControl {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    fill: $brand_primary;
+    background-color: $color_white;
+    border-radius: 15px;
+    @include transition(background-color .4s ease);
+
+    &:hover, &:focus {
+        background-color: $brand_primary_light;
+    }
+}
+
+.appSidebar {
+    height: 100%;
+    @include transition(1s ease);
+    position: relative;
+    padding-top: 50px;
+
+    @include MQ(M) {
+        width: 270px;
+    }
+}
+
+.appSidebarBavItem {
+    margin-bottom: 5px;
+}
+
+.appSidebarBav_link {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    padding: 12px 30px 12px 30px;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 0px 30px 30px 0px;
+    position: relative;
+
+    .childNavBlock & {
+        padding-left: 70px;
+    }
+
+    .hasChildren > &::before {
+        content: "";
+        width: 24px;
+        height: 24px;
+        display: inline-flex;
+        background-image: url(../img/icons/caret_down.svg);
+        position: absolute;
+        left: 5px;
+        transform: rotate(0deg);
+        @include center(y);
+        background-repeat: no-repeat;
+
+        &.childActive {
+            transform: rotate(270deg);
+        }
+    }
+
+    &.active, &:hover, &:focus {
+        background-color: white;
+        color: $brand_primary;
+    }
+
+    &.active {
+        font-weight: 600;
+    }
+}
+
+.icon_holder {
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+.navLink_label {
+    position: relative;
+    flex: 1;
+}
+
+.appContentMain {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 50px 0;
+    overflow: auto;
+    
+    @include MQ(M) {
+        width: calc(100% - 270px);
+    }
+}
+
+.currencyPanel {
+    display: block;
+    background-color: white;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+
+    + .currencyPanel {
+        margin-top: 30px;
+    }
+
+}
+
+.iconBox {
+    display: inline-flex;
+    width: 48px;
+    height: 48px;
+    background-color: $color_white;
+    color: $brand_black;
+    font-weight: 900;
+    font-size: 21px;
+}
+
+.titleSubtext {
+    font-weight: 400;
+    color: $border_grey_dark;
+    font-size: .85em;
+}
+
+.currHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $border_grey;
+}
+
+.currBody {
+    padding-top: 20px;
+}
+

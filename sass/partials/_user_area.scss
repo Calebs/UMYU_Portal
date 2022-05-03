@@ -1,0 +1,117 @@
+.media_item {
+    @include flexbox();
+    overflow: hidden;
+}
+
+.media_figure {
+    position: relative;
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+.media_info {
+    flex: 1;
+}
+
+.userAvi {
+    width: 45px;
+    height: 45px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    font-size: 1em;
+
+    + .user_info {
+        margin-left: 15px;
+    }
+
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        z-index: 1;
+        border-radius: inherit;
+        text-indent: 9999;
+        background-color: $brand_primary_light;
+        font-size: 0;
+        color: transparent;
+        @include center(xy);
+    }
+}
+
+.iconBox {
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    place-content: center;
+    background-color: $color_white;
+}
+
+.iconBox_failed {
+    background-color: $brand_red_light;
+}
+
+.iconBox_success {
+    background-color: $brand_accent_light;
+}
+
+.avi_avg {
+    height: 32px;
+    width: 32px;
+}
+
+.avi_sm {
+    height: 24px;
+    width: 24px;
+    font-size: 11px;
+}
+
+.avi_md {
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+} 
+
+.avi_lg {
+    width: 64px;
+    height: 64px;
+    font-size: 21px;
+} 
+
+.default_avi {
+    width: 100%;
+    height: 100%;
+    background-color: $brand_primary_light;
+    text-transform: uppercase;
+    color: $brand_primary;
+    font-weight: bold;
+    border-radius: inherit;
+    font-size: 1em;
+    line-height: 1em;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user_info {
+    font-size: 13px;
+    overflow: hidden;
+    width: 100%;
+    text-align: left;
+    color: $color_grey_dark;    
+}
