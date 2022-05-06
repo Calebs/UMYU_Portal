@@ -12,7 +12,8 @@ img {
     height: auto;
 }
 
-ul, ol {
+ul,
+ol {
     padding: 0;
     margin: 0;
 }
@@ -39,7 +40,6 @@ body {
     position: relative;
     line-height: 1.65;
     background-color: $color_white;
-    
     &.scroll_lock {
         overflow: hidden;
     }
@@ -55,6 +55,7 @@ body {
     vertical-align: center;
     line-height: 1;
 }
+
 
 /* Backgrounds */
 
@@ -80,6 +81,22 @@ body {
 
 .bg__black {
     background-color: $brand_black !important;
+}
+
+.bg_btn__primary {
+    background-color: $brand_green!important;
+}
+
+.bg__gray {
+    background-color: $color_gray!important;
+}
+
+.bg__gray_light {
+    background-color: $border_grey_light;
+}
+
+.color_link__primary {
+    color: $brand_green!important;
 }
 
 .color__primary {
@@ -122,7 +139,6 @@ body {
     color: $color_text_darker !important;
 }
 
-
 .font-sm {
     font-size: 12px !important;
 }
@@ -137,9 +153,15 @@ body {
 
 .font-lg {
     font-size: 18px !important;
-
     @include MQ(M) {
         font-size: 21px !important;
+    }
+}
+
+.font-xlg {
+    font-size: 28px!important;
+    @include MQ(M) {
+        font-size: 32px !important;
     }
 }
 
@@ -187,7 +209,6 @@ body {
     width: auto;
     position: relative;
     max-width: 1170px;
-
     @include MQ(M) {
         .mainContentWrapper & {
             padding-left: 30px;
@@ -209,6 +230,7 @@ body {
     float: none;
     margin: 0 auto;
 }
+
 .hidden {
     display: none !important;
 }
@@ -217,7 +239,6 @@ body {
     .hidden-sm {
         display: none !important;
     }
-
     .text-center-sm {
         text-align: center !important;
     }
@@ -267,13 +288,13 @@ h6 {
 p {
     margin: 0;
     @include break-inside(avoid);
-        
     +p {
         padding-top: .5em;
     }
 }
 
-address, address span {
+address,
+address span {
     display: block;
 }
 
@@ -321,8 +342,7 @@ address, address span {
     max-width: 126px;
     display: block;
     margin-bottom: 20px;
-
-    > img {
+    >img {
         display: block;
         width: 100%;
     }
@@ -337,10 +357,9 @@ address, address span {
     color: $color_text_darker;
 }
 
-.emptyStateIlloHolder  {
+.emptyStateIlloHolder {
     margin: 20px auto;
     clear: both;
-
     img {
         height: auto;
         max-width: 128px;
@@ -377,11 +396,9 @@ address, address span {
 
 .alertBtn {
     flex-shrink: 0;
-
     @include MQ(S) {
         margin-left: 15px;
     }
-
     @include MQ-MAX(S) {
         margin-top: 15px;
     }
@@ -392,17 +409,17 @@ address, address span {
     color: $brand_primary;
 }
 
-.alert-secondary .alertWrapper{
+.alert-secondary .alertWrapper {
     box-shadow: inset 4px 0 $brand_accent;
     color: $brand_accent;
 }
 
-.alert-danger .alertWrapper{
+.alert-danger .alertWrapper {
     box-shadow: inset 4px 0 $brand_red;
     color: $brand_black;
 }
 
-.alert-success .alertWrapper{
+.alert-success .alertWrapper {
     box-shadow: inset 4px 0 $brand_accent;
     color: $brand_black;
 }

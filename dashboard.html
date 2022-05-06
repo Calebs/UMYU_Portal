@@ -1,38 +1,226 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="no-js">
 
 <head>
-	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
     <title>Student Dashboard | App Settings</title>
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/png">
-    <link rel="icon" href="img/logo.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/reset.css"/>
-    <link rel="stylesheet" href="css/base.min.css"/>
-    <link rel="stylesheet" href="css/styles.css"/>
-    <script src="js/modernizr.js"></script> <!-- Modernizr -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/png" />
+    <link rel="icon" href="img/logo.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/base.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/modernizr.js"></script>
+    <!-- Modernizr -->
 </head>
 
 <body class="">
-
     <main class="appMainWrapper">
         <section class="section-block">
-            <div class="container">
-                <h4 class="title title_md color__black">Hello</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit fugiat explicabo dolore perspiciatis repudiandae, doloremque vero ex quis magni ipsa beatae, asperiores laboriosam nisi nam, non voluptatum ipsum nemo ullam.</p>
+            <div class="row">
+                <nav class="containerNav col col-lg-3">
+                    <div class="overlay-menu"></div>
+                    <div class="navIcon_Wrapper bg__white px-3 px-md-5 py-2 py-lg-3">
+                        <div class="name-initials__Container bg_btn__primary">
+                            <p class="text-uppercase color__white font-bold font-default text-center">
+                                AO
+                            </p>
+                        </div>
+                        <a class="navbar-brand" href="#"><img src="./img/logo.png" alt="logo" class="nav_logo" /></a>
+                        <div class="navbar-toggler bg__off_white hide-desktop">
+                            <a href="#" class="nav--toggle-open" id="hamburger"> <img src="./img/hamburger.png" alt="open" class="open-toggle" /></a>
+                            <a href="#" class="nav--toggle-close" id="close"><img src="./img/close.png" alt="close" class="close-toggle" /></a>
+                        </div>
+
+
+
+                    </div>
+                    <div id="sidebar" class="sidebar__nav--links bg__white hide-mobile">
+                        <div class="py-4 py-lg-2 px-3 px-md-5">
+                            <p class="text-uppercase font-default color__grey_light">
+                                main menu
+                            </p>
+                        </div>
+                        <div class="sidebar__nav">
+                            <a href="#dashboard" class="sidebar__link active py-4 py-lg-2 px-3 px-md-5">
+                                <i class="fa fa-gauge-simple-high me-2 sidebar__link--icon active"></i> Dashboard
+                            </a>
+                            <a href="#" class="sidebar__link py-4 px-3 py-lg-2 px-md-5">
+                                <i class="fa fa-graduation-cap sidebar__link--icon me-2"></i> Academic Details
+                            </a>
+                            <a href="#" class="sidebar__link py-4 py-lg-2 px-3 px-md-5">
+                                <i class="fa-regular fa-credit-card sidebar__link--icon me-2"></i>Payment Manager
+                            </a>
+                            <a href="#" class="sidebar__link py-4 py-lg-2 px-3 px-md-5">
+                                <i class="fa fa-building sidebar__link--icon me-2"></i> Hostel
+
+                            </a>
+                            <a href="#" class="sidebar__link py-4 py-lg-2 px-3 px-md-5">
+
+                                <i class="fa fa-book-open sidebar__link--icon me-2"></i> Courses Manager
+                            </a>
+                            <a href="#" class="sidebar__link py-4 py-lg-2 px-3 px-md-5">
+                                <img src="./img/result.png" alt="courses manager" class="sidebar__link--icon me-2" /> Result Manager
+                            </a>
+                            <a href="#" class="sidebar__link py-4 py-lg-2 px-3 px-md-5">
+
+                                <i class="fa-regular fa-circle-user me-2"></i> My Profile
+                            </a>
+                        </div>
+                        <div class="mx-3 mx-md-5 my-5 bg__off_white p-2 help_container">
+                            <div class="msgHelp_Container pe-2">
+                                <img src="./img/Outlinemail.png" alt="mail help" class="helpImg" />
+                            </div>
+                            <div class="help_Container">
+                                <p class="color_link__primary font-md font-bold text-start">
+                                    Get Help
+                                </p>
+                                <p class="text-start font-default">
+                                    Visit the School ICT or email Support
+                                </p>
+                            </div>
+                        </div>
+                        <div class="btn-logOut__Container">
+                            <button class="btn btn-md color__default font-bold font-default text-uppercase btn-logOut mx-3 mx-md-5">
+                  log out
+                </button>
+                        </div>
+                    </div>
+                </nav>
+                <div class="col col-lg-9">
+                    <div class="row">
+                        <div class="col col-lg-12">
+                            <div class="greeting py-5">
+                                <h1 class="font-bold font-xlg text-start greeting_pad">
+                                    Welcome, Damilola
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row_Wrapper ">
+                        <div class="col-md col-lg-7 d-flex justify-content-center">
+                            <div class="card text-left bg__white px-1 py-4 p-md-4 mx-3 mx-lg-0">
+                                <div class="user-info_Wrapper">
+                                    <div class="profile_Wrapper pb-2">
+                                        <img src="./img/user.png" alt="user-picture" class="user-picture" />
+                                    </div>
+                                    <div class="wrapper px-3">
+                                        <h1 class="text-capitalize font-xlg font-bold">
+                                            Adeyemi Olutayo
+                                        </h1>
+                                        <div class="user_info_container">
+                                            <p class="font-default matric_no pe-3">
+                                                <!-- TO BE RENDERED DYNAMICALLY -->
+                                                Matric no: <span>012356</span>
+                                            </p>
+                                            <p class="font-default gender ps-3 pt-0">
+                                                <!-- TO BE RENDERED DYNAMICALLY -->
+                                                Gender: <span>male</span>
+                                            </p>
+                                        </div>
+                                        <div class="edit_Profile_container py-4">
+                                            <a href="#" class="text-capitalize font-default text-start"><img src="./img/user_plus.png" alt="profile edit" class="user-plus" /> Edit Profile</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-body mt-3">
+                                    <div class="info_section py-2">
+                                        <p class="info-text text-start font-default text-uppercase color-text">
+                                            Program
+                                        </p>
+                                        <p class="font-bold font-md text-end text-capitalize pt-0">
+                                            Post Graduate Diploma
+                                        </p>
+                                    </div>
+                                    <div class="info_section py-2">
+                                        <p class="info-text text-start font-default text-uppercase color-text">
+                                            Field of Study
+                                        </p>
+                                        <p class="font-bold font-md text-end text-capitalize pt-0">
+                                            M.A (Ed) English Language
+                                        </p>
+                                    </div>
+                                    <div class="info_section py-2">
+                                        <p class="info-text text-start font-default text-uppercase color-text">
+                                            Faculty
+                                        </p>
+                                        <p class="font-bold font-md text-end text-capitalize pt-0">
+                                            Education
+                                        </p>
+                                    </div>
+                                    <div class="info_section py-2">
+                                        <p class="info-text text-start font-default text-uppercase color-text">
+                                            Department
+                                        </p>
+                                        <p class="font-bold font-md text-end text-capitalize pt-0">
+                                            Linguistics
+                                        </p>
+                                    </div>
+                                    <div class="info_section py-2">
+                                        <p class="info-text text-start font-default text-uppercase color-text">
+                                            Level
+                                        </p>
+                                        <p class="font-bold font-md text-end text-capitalize pt-0">
+                                            200 Level
+                                        </p>
+                                    </div>
+                                    <div class="info_section py-2">
+                                        <p class="info-text text-start font-default text-uppercase color-text">
+                                            Session
+                                        </p>
+                                        <p class="font-bold font-md text-end text-capitalize pt-0">
+                                            2021/2022
+                                        </p>
+                                    </div>
+                                    <div class="info_section py-2">
+                                        <p class="info-text text-start font-default text-uppercase color-text">
+                                            Course Registration
+                                        </p>
+                                        <p class="font-bold font-md text-end text-capitalize pt-0">
+                                            Not Registered
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md col-lg-5 d-flex justify-content-center justify-content-lg-start">
+                            <div class="update_Card mx-lg-0 my-3 my-lg-0 mb-4 px-3 p-md-4 p-lg-0">
+                                <h1 class="text-uppercase font-bold font-md py-2 update-heading">Updates</h6>
+                                    <div class="update-body_container py-4">
+                                        <div class="update pb-3">
+                                            <i class="fa-solid fa-angles-right me-3 mt-2"></i>
+                                            <p class="color-text font-md text-start">Course Registration for 2021/2022 session is now open.
+                                                <span><a href="#" class="text-decoration-underline">Register your courses here</a></span>
+                                            </p>
+                                        </div>
+                                        <div class="update pb-3">
+                                            <i class="fa-solid fa-angles-right me-3 mt-2"></i>
+                                            <p class="color-text font-md text-start">The payment portal for 2021/2022 is open.
+                                                <span><a href="#" class="text-decoration-underline">Pay your fees here</a></span>
+                                            </p>
+                                        </div>
+
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-	<script src="js/jquery.js"></script>
+    <script src="js/jquery.js"></script>
     <script src="js/base.min.js"></script>
     <script src="js/main.js"></script>
-
 </body>
+
 </html>

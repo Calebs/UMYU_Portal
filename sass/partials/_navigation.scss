@@ -2,13 +2,11 @@ a {
     text-decoration: none;
     @include transition(all .6s ease-in-out);
     color: inherit;
-    
     &:hover,
     &:focus {
         color: $brand_accent;
         text-decoration: none;
     }
-    
     &:focus {
         outline: thin dotted $brand_accent;
         .no-touch & {
@@ -35,8 +33,8 @@ button {
     cursor: pointer;
     text-align: center;
     @include transition(all .6s ease-in-out);
-
-    &:focus, &:visited {
+    &:focus,
+    &:visited {
         outline: none;
     }
 }
@@ -60,20 +58,17 @@ button {
     @include transition(all .6s ease-in-out);
     text-decoration: none !important;
     will-change: background-color, color;
-    
-    + [class *="btn"], + [class *="Btn"] {
+    +[class *="btn"],
+    +[class *="Btn"] {
         margin-left: 1em;
     }
-
-    > * + * {
+    >*+* {
         margin-left: 10px;
     }
-
     @include MQ(M) {
         min-width: 100px;
         font-size: 1em;
     }
-
     &:hover,
     &:focus {
         text-decoration: none !important;
@@ -82,9 +77,9 @@ button {
             outline: none;
         }
     }
-
-    &[disabled], &.disabled {
-        pointer-events:none;
+    &[disabled],
+    &.disabled {
+        pointer-events: none;
         color: $color_white;
         background-color: $border_grey_dark;
     }
@@ -95,12 +90,10 @@ button {
     line-height: 1;
 }
 
-
 .btn-primary {
     background-color: $brand_primary;
-    background:  $brand_primary;
+    background: $brand_primary;
     color: white;
-
     &:hover,
     &:focus {
         background: $brand_black;
@@ -113,7 +106,6 @@ button {
     border: 1px solid $brand_primary;
     color: $color_text_darker;
     fill: $color_text_darker;
-
     &:hover,
     &:focus {
         background-color: $brand_primary;
@@ -128,7 +120,6 @@ button {
     border: 1px solid $border_grey;
     color: $color_text;
     fill: $color_text;
-
     &:hover,
     &:focus {
         background-color: $brand_primary_light;
@@ -141,8 +132,8 @@ button {
 .btn-danger {
     color: $brand_red;
     background-color: $brand_red_light;
-
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
         background-color: $brand_red;
         color: $color_white;
     }
@@ -152,7 +143,6 @@ button {
     background-color: $color_white;
     color: $color_grey_dark;
     fill: $color_grey_dark;
-
     &:hover,
     &:focus {
         background-color: white;
@@ -179,14 +169,13 @@ button {
     display: inline-block;
     text-decoration: underline;
     color: $brand_primary;
-        
     &:hover,
     &:focus {
         color: $border_grey_dark;
         text-decoration: none;
     }
-    
-    &:active, &[disabled] {
+    &:active,
+    &[disabled] {
         color: $color_grey_dark;
         outline: none;
     }
@@ -208,7 +197,6 @@ button {
     text-align: center;
     border-radius: 10px;
     position: relative;
-
     &::before,
     &::after {
         position: absolute;
@@ -236,11 +224,12 @@ button {
     }
 }
 
+
 /* pager */
+
 .pager {
     display: block;
     @include clearfix;
-
     >* {
         vertical-align: middle;
         display: inline-block;
@@ -250,14 +239,12 @@ button {
 .pager_item {
     display: inline-block;
     margin-right: 10px;
-
     a {
         display: block;
         padding: 5px 12px;
         border-radius: 20px;
         text-transform: capitalize;
         color: $color_text;
-
         &:hover {
             background-color: $brand_primary_light;
         }
@@ -267,5 +254,249 @@ button {
         font-weight: 600;
         color: $brand_primary;
         background-color: white;
+    }
+}
+
+
+/************SIDEBAR NAVIGATION************/
+
+.containerNav {
+    width: 100%;
+    z-index: 1;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    margin-top: 0;
+    margin-left: 0;
+    @include flexbox();
+    flex-direction: column;
+    @include MQ(L) {
+        width: 270px;
+    }
+}
+
+.navbar {
+    width: 100%;
+    align-items: flex-start;
+    @include MQ(L) {
+        height: 100vh;
+    }
+}
+
+.name-initials__Container {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    @include flexbox();
+    align-items: center;
+    justify-content: center;
+    @include MQ(L) {
+        display: none;
+    }
+}
+
+.navIcon_Wrapper {
+    width: 100vw;
+    z-index: 1;
+    @include flexbox();
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    @include MQ(L) {
+        width: 270px;
+        justify-content: flex-start;
+    }
+}
+
+// .navbar-toggler {
+//     width: 32px;
+//     height: 32px;
+//     border: none;
+//     border-radius: 10px;
+//     // position: relative;
+//     @include flexbox();
+//     justify-content: center;
+//     align-items: center;
+//     transition: 0.3s all ease-in-out;
+//     &:hover,
+//     &:active {
+//         background-color: $brand_accent;
+//     }
+// }
+.navbar-toggler {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 10px;
+    @include flexbox();
+    justify-content: center;
+    align-items: center;
+}
+
+.nav--toggle-open,
+.nav--toggle-close {
+    width: auto;
+    // position: relative;
+    z-index: 2;
+}
+
+.open-toggle {
+    width: auto;
+}
+
+.nav--toggle-close {
+    display: none;
+    z-index: 2;
+}
+
+.close-toggle {
+    width: auto;
+    // position: absolute;
+    // top: 0;
+}
+
+.navbar-brand {
+    width: 100%;
+    @include flexbox();
+    justify-content: center;
+    @include MQ(L) {
+        justify-content: flex-start;
+    }
+}
+
+.nav_logo {
+    width: 38px;
+    height: 38px;
+    z-index: 1;
+    @include MQ(L) {
+        width: 96px;
+        height: 96px;
+    }
+}
+
+.overlay-menu {
+    position: fixed;
+    opacity: 0;
+    /*change to 0.8*/
+    top: 0%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    display: none;
+}
+
+.sidebar__nav--links {
+    z-index: 2;
+    width: 270px;
+    height: 98vh;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    // bottom: 0;
+    @include MQ(L) {
+        min-height: 90vh;
+        position: static;
+        display: block!important;
+    }
+}
+
+.sidebar__nav {
+    z-index: 2;
+    @include flexbox();
+    flex-direction: column;
+}
+
+.sidebar__link--icon {
+    width: auto;
+}
+
+.hide-desktop {
+    @include MQ(L) {
+        display: none;
+    }
+}
+
+.hide-mobile {
+    display: none;
+    // display: block;
+    @include MQ(L) {
+        display: block;
+    }
+}
+
+.sidebar__link {
+    transition: 0.3ms all ease-in-out;
+}
+
+.sidebar__link.active {
+    background-color: $brand_light_green;
+    color: $color_text;
+    font-weight: 700;
+}
+
+.sidebar__link--icon.active {
+    color: $brand_green;
+}
+
+.sidebar__link:hover {
+    background-color: $brand_light_green;
+    color: $color_text;
+}
+
+.help_Container {
+    @include flexbox();
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.msgHelp_Container {
+    height: 100%;
+    @include flexbox();
+    align-items: flex-start;
+}
+
+.helpImg {
+    width: auto;
+}
+
+.help_container {
+    width: 245px;
+    border-radius: 10px;
+    @include flexbox();
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    @include MQ(M) {
+        width: 210px;
+    }
+}
+
+.help_Container {
+    width: 100%;
+    @include flexbox();
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.btn-logOut__Container {
+    margin-top: 14rem;
+    @include MQ(M) {
+        margin-top: 16rem;
+    }
+    @include MQ(L) {
+        margin-top: 7rem;
+    }
+}
+
+.btn-logOut {
+    width: 245px;
+    border: 1px solid $border_grey_light;
+    border-radius: 15px;
+    background-color: transparent;
+    @include MQ(M) {
+        width: 210px;
     }
 }
