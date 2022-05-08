@@ -18,6 +18,11 @@ header[role="banner"] {
     @include backface-visibility(hidden);
     border-bottom: 1px solid $border_grey;
     background-color: white;
+    
+    @include MQ(M) {
+        display: none;
+    }
+
 }
 
 .navbarWrapper {
@@ -59,11 +64,19 @@ header[role="banner"] {
 
 .navBarItemCenter {
     flex-grow: 1;
+    justify-content: center;
 
     @include MQ-MAX(L) {
         width: 100%;
-        position: absolute;
-        left: 0;
+    }
+}
+
+.sidbarLogoHolder {
+    clear: both;
+    padding: 0 20px 30px;
+
+    @include MQ-MAX(M) {
+        display: none;
     }
 }
 
@@ -78,10 +91,13 @@ header[role="banner"] {
 .logo_link {
     padding: 0;
     display: inline-block;
-    line-height: $header_height;
-    width: 95px;
     position: relative;
     height: 100%;
+
+    .mainAppHeader & {
+        width: 42px;
+        line-height: $header_height;
+    }
         
     >img {
         vertical-align: middle;
@@ -89,249 +105,159 @@ header[role="banner"] {
     }
 }
 
-.navMenu {
-    @include flexbox();
-    align-items: center;
-    width: 100%;
-}
-
 .navControlBtn {
     position: relative;
     margin-right: 20px;
 }
 
-.countBadge {
-    display: inline-flex;
-    padding: 3px 6px;
-    background-color: $brand_red;
-    color: $color_white;
-    font-size:11px;
-    font-weight: 600;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    line-height: 12px;
-    position: absolute;
-    white-space: nowrap;
-    top: 3px;
-    right: 3px;
-}
-
-.userAccountDetails {
-    @include flexbox();
-    align-items: center;
-
-    &:hover {
-        color: inherit
-    }
-}
-
-.dsp_tab_row {
-    @include flexbox();
-    align-items: center;
-
-    &.menuLinkItem {
-        flex-direction: column;
-        justify-content: center;
-    }
-}
-
-.icon_holder {
-    flex-shrink: 0;
-
-    .dpd_nav_item & {
-        margin-right: 10px;
-        margin-bottom: 0;
-    }
-}
-
-.bankBranch_switcher {
-    margin-left: 20px;
-    border-left: 1px solid $border_grey_light;
-}
-
-.actViewToggle {
-    padding: 2px 15px;
-    color: $color_text_darker;
-    display: block;
-
-    &:hover, &:focus {
-        color: $brand_primary;
-    }
-}
-
-.switchToggleInner {
-    @include flexbox();
-    flex-direction: column;
-
-}
-
-.switchLabel {
-    font-size: 13px;
-    color: $border_grey_dark;
-}
-
-.activeBranch {
-    font-size: 16px;
-    line-height: 1;
-    @include flexbox();
-    align-items: center;
-
-    span + span {
-        margin-left: 15px;
-    }
-}
-
-// New styles
-
-.switchControlLink  {
-    display: block;
-    padding: 0 20px;
-    border-left: 1px solid $border_grey_light;
-    color: $color_text_darker;
-
-    &:hover, &:focus {
-        color: $brand_primary;
-    }
-}
-
-.valueLabel {
-    font-weight: 600;
-    font-size: 16px;
-}
-
-.navBtnControl {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 48px;
-    height: 48px;
-    fill: $brand_primary;
-    background-color: $color_white;
-    border-radius: 15px;
-    @include transition(background-color .4s ease);
-
-    &:hover, &:focus {
-        background-color: $brand_primary_light;
-    }
-}
-
-.appSidebar {
-    height: 100%;
-    @include transition(1s ease);
+.primary-nav-trigger {
     position: relative;
-    padding-top: 50px;
-
-    @include MQ(M) {
-        width: 270px;
-    }
 }
 
-.appSidebarBavItem {
-    margin-bottom: 5px;
-}
-
-.appSidebarBav_link {
-    display: flex;
-    align-items: center;
-    background-color: transparent;
-    padding: 12px 30px 12px 30px;
-    font-size: 16px;
-    font-weight: 400;
-    border-radius: 0px 30px 30px 0px;
+.menu-icon {
+    /* this span is the central line of the menu icon */
+    display: block;
+    width: 24px;
+    height: 2px;
     position: relative;
-
-    .childNavBlock & {
-        padding-left: 70px;
-    }
-
-    .hasChildren > &::before {
-        content: "";
-        width: 24px;
-        height: 24px;
-        display: inline-flex;
-        background-image: url(../img/icons/caret_down.svg);
+    background-color: $brand_black;
+    @include transition(background-color .6s);
+    /* these are the upper and lower lines in the menu icon */
+    &::before,
+    &:after {
+        content: '';
+        width: 100%;
+        height: 100%;
         position: absolute;
-        left: 5px;
-        transform: rotate(0deg);
-        @include center(y);
-        background-repeat: no-repeat;
-
-        &.childActive {
-            transform: rotate(270deg);
+        background-color: $brand_black;
+        right: 0;
+        @include transition(transform .6s, top .6s, background-color 0s);
+    }
+    &::before {
+        top: -7px;
+    }
+    &::after {
+        top: 7px;
+    }
+    &.is-clicked {
+        background-color: rgba($brand_black, 0);
+        &::before,
+        &::after {
+            background-color: rgba($brand_black, 1);
+        }
+        &::before {
+            top: 0;
+            @include transform(rotate(135deg));
+        }
+        &::after {
+            top: 0;
+            @include transform(rotate(225deg));
         }
     }
-
-    &.active, &:hover, &:focus {
-        background-color: white;
-        color: $brand_primary;
-    }
-
-    &.active {
-        font-weight: 600;
-    }
 }
 
-.icon_holder {
-    flex-shrink: 0;
-    margin-right: 10px;
+.menu-text {
+    font-size: 9px;
+    display: none;
 }
 
-.navLink_label {
-    position: relative;
-    flex: 1;
+// SidebarNavigation
+.appLayoutWrapper {
+    margin: 0 auto;
+    height: 100%;
+    height: 100vh;
+    @include flexbox();
+    @include transition(1s ease);
+    overflow: hidden;
 }
-
-.appContentMain {
-    width: 100%;
+  
+.mainSidebar {
     height: 100%;
     position: relative;
-    padding: 50px 0;
+    background-color: white;
+    @include transition(all .6s cubic-bezier(.68, .34, .15, 1));
+    transform-origin: left;
+    width: 270px;
+
+    @include MQ-MAX(M) {
+        left: 0;
+        position: fixed;
+        height: 100%;
+        height: 100vh;
+        visibility: hidden;
+        opacity: 0;
+        top: $header_height;
+        flex-direction: column;
+        @include transform(scaleX(0));
+    }
+
+    .is-active & {
+        @include transform(scaleX(1));
+        visibility: visible;
+        opacity: 1;
+        z-index: 10;
+        @include transition(transform .8s cubic-bezier(.68, .34, .15, 1));
+    }
+}
+  
+.mainContentWrapper {
+    width: 100%;
+    height: 100%;
+    @include transition(1s ease);
     overflow: auto;
-    
+
     @include MQ(M) {
         width: calc(100% - 270px);
     }
 }
 
-.currencyPanel {
-    display: block;
-    background-color: white;
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 15px;
-    padding: 30px;
+.sidebarNavWrapper {
+    height: 100%;
+    overflow: auto;
+    position: relative;
+}
 
-    + .currencyPanel {
-        margin-top: 30px;
+.sidebarMainHolder{
+    width: 100%;
+    padding: 30px 0;
+    position: relative;
+}
+
+.navBarContainer {
+    padding: 0 20px 15px;
+}
+
+.sidebarNavItem {
+    display: block;
+
+    + .sidebarNavItem {
+        margin-top: 5px;
+    }
+}
+
+.sidebarItem_link {
+    @include flexbox();
+    align-items: center;
+    padding: 10px 20px 10px 20px;
+    background-color: transparent;
+    font-size: 14px;
+    color: $border_grey_dark;
+    fill: $border_grey_dark;
+    position: relative;
+    @include transition(.4s all ease-in-out 0s);
+
+    .active > &, &:hover, &:focus {
+        color: $brand_black;
+        fill: $brand_primary;
+        font-weight: 600;
     }
 
+    .active > & {
+        background-color:$brand_primary_light;
+    }
 }
 
-.iconBox {
-    display: inline-flex;
-    width: 48px;
-    height: 48px;
-    background-color: $color_white;
-    color: $brand_black;
-    font-weight: 900;
-    font-size: 21px;
+.navItemIcon {
+    flex-shrink: 0;
+    margin-right: 10px;
 }
-
-.titleSubtext {
-    font-weight: 400;
-    color: $border_grey_dark;
-    font-size: .85em;
-}
-
-.currHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 20px;
-    border-bottom: 1px solid $border_grey;
-}
-
-.currBody {
-    padding-top: 20px;
-}
-

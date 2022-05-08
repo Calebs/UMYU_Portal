@@ -54,3 +54,41 @@ svg {
 .icon_upload {
   background-image: url(../img/icons/cloud_upload.svg);
 }
+
+.icon_user {
+  background-image: url(../img/icons/auth_person_ico.svg);
+}
+
+.icon_lock {
+  background-image: url(../img/icons/auth_pass_ico.svg);
+}
+
+.icon_info {
+  background-image: url(../img/icons/error-warning.svg);
+}
+
+.icon_google {
+  background-image: url(../img/icons/google_ico.svg);
+}
+
+.icon_chevron_right {
+  background-image: url(../img/icons/chevron-right.svg);
+}
+
+.icon_help {
+  background-image: url(../img/icons/help_outline.svg);
+}
+
+.icon_editProfile {
+  background-image: url(../img/icons/profileSettings.svg);
+}
+
+.propIcon {
+  display: block;
+  margin-bottom: 40px;
+
+  img {
+    max-width: 128px;
+    display: inline-block;
+  }
+}

@@ -1,0 +1,59 @@
+.metaList {
+    @include flexbox();
+    align-items: center;
+}
+
+.metaItem {
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+
+    .ListGroupItem & {
+        justify-content: space-between;
+    }
+
+    + .metaItem::before {
+        content: "|";
+        font-size: 1.5em;
+        color: $border_grey_light;
+        padding: 0 10px;
+    }
+
+    * + * {
+        margin-left: 5px;
+    }
+}
+
+.ListGroupItem {
+    display: block;
+    clear: both;
+    padding: 15px 0;
+    border-bottom: 1px solid $color_white;
+}
+
+.updateListItem {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.updateItemWrapper {
+    @include flexbox();
+    width: 100%;
+    font-size: 16px;
+    color: $color_text_darker;
+
+    &:hover, &:focus {
+        text-decoration: underline;
+    }
+
+    &::before {
+        content: "";
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        margin-right: 15px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(../img/icons/listMarker.svg);
+    }
+}

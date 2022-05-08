@@ -7,12 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Student Dashboard | App Settings</title>
+    <title>Student Log In | UMYU Katsina</title>
     <link rel="shortcut icon" href="img/favicon.ico" type="image/png" />
     <link rel="icon" href="img/logo.png" type="image/png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/base.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
@@ -20,66 +17,90 @@
     <!-- Modernizr -->
 </head>
 
-<body class="">
-    <main class="appMainWrapper login-bg">
-        <div class="overlay"></div>
-        <div class="img_container">
-            <img src="./img/logo.png" alt="logo" class="logo-position" />
-        </div>
-        <form action="" class="container-md form_body bg__white login_form p-5 p-md-5">
-            <h1 class="font-xlg font-bold color__dark text-start">Welcome Back</h1>
-            <p class="font-sm font-default color__default text-start header_text py-2">
-                Sign in to access your school portal
-            </p>
-            <fieldset class="form-group mt-3">
-                <div class="input-group input_Wrapper">
-                    <img src="./img/username.png" alt="username" class="form-icon mx-4" />
-                    <input type="text" placeholder="Username" class="form-control" required />
+<body class="authBg_present">
+
+  <main class="authPageWrapper">
+		<section class="section_block">
+			<div class="container">
+				<header class="LogoHolder margin_bottom_lg">
+					<a href="./index.html" class="">
+						<img src="./img/logo.png" alt="CashComplete">
+					</a>
+				</header>
+
+				<div class="row">
+					<div class="offset-md-6 col-md-6 authFormBlock">
+						<div class="formPanel centered">
+							<header class="blockHeader margin_bottom_md">
+								<h2 class="title title_md font-bold color__black">Welcome Back</h2>
+                <p>Sign in to access your school portal</p>
+							</header>
+							<div class="error_message hidden text-left">
+								<p>An error occurred while trying to log in. Please try again.</p>
+							</div>
+							<form action="">
+								
+								<div class="form-group">
+									<label class="control-label font-bold">Username</label>
+									<div class="inputaffixed inputPrefixed">
+										<div class="inputfixture ">
+											<i class="cust_icon icon_user"></i>
+										</div>
+										<input type="text" required class="form-control inputControl " placeholder="Your email address or Username">
+									</div>
+								</div>
+								<div class="form-group ">
+									<label class="control-label font-bold">Password</label>
+                  <div class="inputaffixed inputPrefixed">
+                    <div class="inputfixture">
+                      <i class="cust_icon icon_lock"></i>
+                    </div>
+                    <input type="password" class="form-control user_pass inputControl " placeholder="Enter your password">
+                  </div>
+								</div>
+								<div class="row align-items-center margin_top_lg">
+									<div class="col-6">
+                    <a href="forgotPassword.html" class="btn-link">Forgot Password?</a>
+                  </div>
+                  <div class="col-6 text-right">
+                    <button type="submit" class="btn btn-primary">Continue</button>
+                  </div>
+								</div>
+                <div class="infoBanner margin_top_md">
+									<div class="infoBannerWrapper bg__off_white">
+                    <div class="infoBannerIcon">
+                        <i class="cust_icon icon_info"></i>
+                    </div>
+                    <div class="infoBannerContent">
+                      <p>New Students without Matric Number should Login using JAMB number as Username and Password.</p>
+                    </div>
+                  </div>
+								</div>
+
+                <div class="margin_top_sm">
+                  <a href="#" class="altAuthOptionBtn altOptionGoogle">
+                    <div class="altAuthOptionBtn_wrp">
+                      <i class="cust_icon icon_google"></i>
+                      <span>Returning student? Login Here</span>
+                    </div>
+                    <span class="buttonIcon_ind">
+                      <i class="cust_icon icon_chevron_right"></i>
+                    </span>
+                  </a>
                 </div>
-                <div class="input-group input_Wrapper">
-                    <img src="./img/password.png" alt="password" class="form-icon mx-4" />
-                    <input type="password" placeholder="Password" class="form-control" required />
+
+                <div class="panel_bridge">
+                  <p>For support, please visit the ICT unit Support Email: <a href="mailto:icthelpdesk@umyu.edu.ng" class="btn-link">icthelpdesk@umyu.edu.ng</a></p>
                 </div>
-            </fieldset>
-            <div class="form-forgot__password">
-                <a href="./forgotPassword.html" class="text-decoration-underline font-md">Forgot Password ?</a
-          >
-          <button
-            class="btn btn-md bg_btn__primary color__white text-uppercase"
-          >
-            continue
-          </button>
-        </div>
-        <div class="info bg__off_white p-4 my-4">
-          <img src="./img/error.png" alt="info" class="info_icon me-3" />
-          <p class="color__default text-left info_content font-default">
-            New Students without Matric Number should Login using JAMB number as
-            Username and Password.
-          </p>
-        </div>
-        <div class="signIn_wrapper">
-          <div class="signIn-Container">
-            <img src="./img/google.png" alt="google" class="mail_icon me-3" />
-            <p class="color__default text-left signIn_text font-default">
-              Returning student? Login Here
-            </p>
-          </div>
-          <a href="#"
-            ><img
-              src="./img/caret-right.png"
-              alt="right-arrow"
-              class="signIn_icon"
-          /></a>
-            </div>
-            <div class="my-3 p-4">
-                <p class="color__default font-md text-left form-footnote">
-                    For support, please visit the ICT unit Support Email:
-                </p>
-                <a href="#" class="text-decoration-underline font-bold font-md">icthelpdesk@umyu.edu.ng</a
-          >
-        </div>
-      </form>
-    </main>
+
+							</form>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+	</main>
 
     <script src="js/jquery.js"></script>
     <script src="js/base.min.js"></script>

@@ -1,137 +1,65 @@
-/***** LOGIN BG**********/
+.LogoHolder {
+    display: block;
 
-.appMainWrapper.login-bg {
-    background: url(../../img/bg.png) no-repeat center;
-    background-size: cover;
-    height: 100vh;
-    padding: 50px 135px;
-    justify-content: flex-end;
-    @include MQ(XL) {
-        height: 150vh;
+    img {
+        display: inline-block;
+        max-width: 96px;
     }
 }
 
-.overlay {
-    background-color: rgba(0, 0, 0, 0.8);
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+.error_message {
+    width: 100%;
+    background-color: #FFDEE0;
+    color: $brand_black;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: inset 4px 0 0 $brand_red;
+    margin-bottom: 20px;
 }
 
-.img_container {
-    width: 64px;
-    height: 64px;
-    @include MQ(M) {
-        width: 96px;
-        height: 96px;
-    }
-}
-
-.logo-position {
-    width: 64px;
-    position: absolute;
-    top: 30px;
-    left: 20px;
-    @include MQ(M) {
-        width: auto;
-        top: 50px;
-        left: 135px;
+.altAuthOptionItem {
+    display: block;
+    
+    + .altAuthOptionItem {
+        margin-top: 10px;
     }
 }
 
-
-/**********LOGIN FORM*******/
-
-.login_form {
-    position: absolute;
-    border-radius: 0;
-    right: 0;
-    bottom: 0;
-    @include MQ(M) {
-        right: 100px;
-        bottom: 200px;
-        border-radius: 25px;
-        box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15);
-    }
-    @include MQ(L) {
-        top: 135px;
-        right: 135px;
-        bottom: 135px;
-        border-radius: 25px;
-        box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15);
-    }
-    @include MQ(XL) {
-        height: 560px;
-    }
-}
-
-
-/**********forgot password *************/
-
-.img_Wrapper {
+.altAuthOptionBtn {
     width: 100%;
     @include flexbox();
+    justify-content: space-between;
     align-items: center;
-    justify-content: flex-start;
-    @include MQ(M) {
-        width: 600px;
-    }
-}
-
-.pwd-Container {
-    @include flexbox();
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow-y: hidden;
-}
-
-.pwd_form {
-    position: static;
-    @include MQ(M) {
-        border-radius: 25px;
-        box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15);
-    }
-}
-
-.btn-Container {
-    @include flexbox();
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-
-/*************RESET PASSWORD CONFIRMATION*************/
-
-.confirmMsg_wrapper {
-    width: 100%;
-    @include flexbox();
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.confirmMsg {
+    padding: 10px 20px;
     border-radius: 10px;
+    font-size: 14px;
+    background-color: $brand_black;
+    border: 1px solid $border_grey_light;
+
+    &:hover, &:focus {
+        border-color: $brand_primary;
+        background-color: $brand_primary_light;
+        color: $color_text_darker;
+    }
 }
 
-.msg-imgContainer {
-    width: auto;
+.altOptionGoogle {
+    background-color: white;
+    color: $color_text;
 }
 
-.msg-Container {
+.altAuthOptionBtn_wrp {
     @include flexbox();
     align-items: center;
-    justify-content: flex-start;
+
+    .cust_icon {
+        flex-grow: 0;
+        margin-right: 10px;
+    }
 }
 
-
-/*********CHANGE PASSWORD ***********/
-
-.btnChange-Container {
-    @include flexbox();
-    align-items: center;
-    justify-content: flex-end;
+.panel_bridge {
+    border-top: 1px solid $border_grey_light;
+    padding-top: 20px;
+    margin-top: 20px;
 }

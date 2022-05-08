@@ -3,15 +3,20 @@
     width: 100%;
     background-color: $color_white;
     height: 100%;
+    padding-top: $header_height;
+
     &.is_active {
         overflow: hidden
     }
+
     &::before {
         /* never visible - used to check MQ in jQuery */
         display: none;
         content: 'mobile';
     }
+
     @include MQ(M) {
+        padding-top: 0;
         &::before {
             /* never visible - used to check MQ in jQuery */
             content: 'tablet';
@@ -23,6 +28,28 @@
             /* never visible - used to check MQ in jQuery */
             content: 'desktop';
         }
+    }
+}
+
+.authPageWrapper {
+    height: 100%;
+    display: block;
+    position: relative;
+}
+
+.authBg_present {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url(../img/banners/auth_bg.jpg);
+
+    &::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(black, 0.75);
     }
 }
 
@@ -98,155 +125,69 @@
 
 .formPanel {
     background-color: white;
-    min-height: 400px;
+    min-height: 420px;
     border-radius: 20px;
     padding: 40px 20px;
-    box-shadow: 0px 10px 40px rgba(black, 0.1);
+    box-shadow: 0px 10px 40px rgba(black, 0.15);
+
+    .authFormBlock & {
+        max-width: 500px;
+    }
+
     @include MQ(M) {
-        padding: 40px;
+        padding-right: 40px;
+        padding-left: 40px;
     }
 }
 
-
-/************DASHBOARD***************/
-
-.row_Wrapper {
-    @include flexbox();
-    flex-direction: column-reverse;
-    @include MQ(L) {
-        flex-direction: row;
-        justify-content: center;
-    }
-}
-
-.greeting {
+.infoBanner {
+    display: block;
     width: 100%;
-    display: none;
-    @include MQ(L) {
-        display: block;
-    }
 }
 
-.greeting_pad {
-    @include MQ(L) {
-        padding-left: 3rem;
-    }
-    @include MQ(XXL) {
-        padding-left: 6rem;
-    }
-}
-
-.card {
-    // height: 500px;
-    border-radius: 20px;
-    @include MQ(M) {
-        width: 500px;
-    }
-}
-
-.user-info_Wrapper {
+.infoBannerWrapper {
+    @include flexbox();
+    align-items: flex-start;
     width: 100%;
-    @include flexbox();
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    @include MQ(L) {
-        flex-direction: row;
-        justify-content: flex-start;
-    }
-}
-
-.profile_Wrapper {
-    width: 96px;
-    height: 96px;
-    border-radius: 25px;
-    background-color: $brand_light_green;
-    @include flexbox();
-    justify-content: center;
-    align-items: center;
-    @include MQ(L) {
-        width: 128px;
-        height: 128px;
-    }
-    .user-picture {
-        width: 43px;
-        height: 56px;
-        @include MQ(L) {
-            width: 64px;
-            height: 84px;
-        }
-    }
-    .wrapper {
-        @include flexbox();
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .matric_no {
-        border-right: 1px solid $border_grey;
-    }
-}
-
-.user_info_container {
-    @include flexbox();
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    @include MQ(L) {
-        justify-content: flex-start;
-    }
-}
-
-.matric_no {
-    border-right: 1px solid $border_grey;
-}
-
-.user-plus {
-    width: auto;
-}
-
-.edit_Profile_container {
-    @include flexbox();
-    justify-content: center;
-    @include MQ(L) {
-        justify-content: flex-start;
-    }
-}
-
-.card-body {
-    width: 100%;
-    .info_section {
-        width: 100%;
-        border-bottom: 1px solid $color_white;
-        @include flexbox();
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-}
-
-
-/*********UPDATE SECTION**************/
-
-.update_Card {
-    background-color: white;
-    width: 330px;
+    font-size: 13px;
+    padding: 10px;
     border-radius: 10px;
+}
+
+.infoBannerIcon {
+    margin-right: 10px;
+}
+
+.infoBannerContent {
+    position: relative;
+    flex: 1;
+}
+
+// Dashboard
+
+.panelWrapper {
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid $border_grey_light;
+    width: 100%;
+    padding: 20px 15px;
+
     @include MQ(M) {
-        width: 500px;
-    }
-    @include MQ(L) {
-        // width: 450px;
-        background-color: transparent;
+        padding: 40px 50px;
     }
 }
 
-.update-heading {
+.panelheader {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
     border-bottom: 1px solid $border_grey;
 }
 
-.update {
-    @include flexbox();
-    flex-direction: row;
-    align-items: flex-start;
+.contentSidebarWraper {
+    clear: both;
+    margin-bottom: 30px;
+    
+    @include MQ(M) {
+        max-width: 320px;
+    }
 }

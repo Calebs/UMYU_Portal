@@ -94,7 +94,7 @@ input {
 }
 
 .form-control {
-    padding: 8px;
+    padding: 8px 12px;
     font-size: 1em;
     line-height: normal;
     top: 0;
@@ -106,7 +106,7 @@ input {
     min-height: 45px;
     position: relative;
     border: none;
-    // border: 1px solid $border_grey;
+    border: 1px solid $border_grey;
     border-radius: 10px;
     overflow: hidden;
     color: $color_text_darker;
@@ -140,6 +140,7 @@ input {
     line-height: 1.4rem;
     color: inherit;
     font-weight: 600;
+    
     .labeledForm & {
         padding: 0 12px;
         font-size: .85em;
@@ -360,76 +361,4 @@ label {
         display: inline-block;
         vertical-align: top;
     }
-}
-
-
-/*************LOGIN FORM************/
-
-.form-icon {
-    width: 24px;
-}
-
-.input_Wrapper {
-    border: 1px solid $border_grey;
-    border-radius: 10px;
-    @include flexbox();
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.form-forgot__password {
-    @include flexbox();
-    align-items: center;
-    justify-content: space-between;
-}
-
-.btn {
-    border-radius: 15px;
-}
-
-.info {
-    width: 100%;
-    border-radius: 10px;
-    @include flexbox();
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
-.info_icon {
-    width: 20px;
-}
-
-.info_content {
-    line-height: 23px;
-}
-
-.signIn_wrapper {
-    padding: 8px 16px;
-    width: 100%;
-    border: 1px solid $border_grey_light;
-    border-radius: 10px;
-    @include flexbox;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.signIn-Container {
-    @include flexbox;
-    flex-direction: row;
-}
-
-.mail_icon {
-    width: 24px;
-}
-
-.signIn_text {
-    line-height: 23px;
-}
-
-.signIn_icon {
-    width: 10px;
-}
-
-.form-footnote {
-    line-height: 26px;
 }

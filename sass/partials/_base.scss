@@ -30,11 +30,13 @@ figure {
 
 body {
     font-family: $body_font;
-    font-size: 1.6rem;
-    font-size: 16px;
+    font-size: 1.5rem;
+    font-size: 15px;
     word-spacing: -.01em;
     letter-spacing: .01em;
     color: $color_text;
+    height: 100vh;
+    height: 100%;
     width: 100%;
     font-weight: 400;
     position: relative;
@@ -75,28 +77,12 @@ body {
     background-color: $brand_accent !important;
 }
 
-.bg__secondary_light {
-    background-color: $brand_accent_light !important;
-}
-
 .bg__black {
     background-color: $brand_black !important;
 }
 
-.bg_btn__primary {
-    background-color: $brand_green!important;
-}
-
-.bg__gray {
-    background-color: $color_gray!important;
-}
-
 .bg__gray_light {
     background-color: $border_grey_light;
-}
-
-.color_link__primary {
-    color: $brand_green!important;
 }
 
 .color__primary {
@@ -209,6 +195,7 @@ body {
     width: auto;
     position: relative;
     max-width: 1170px;
+    
     @include MQ(M) {
         .mainContentWrapper & {
             padding-left: 30px;
@@ -288,8 +275,14 @@ h6 {
 p {
     margin: 0;
     @include break-inside(avoid);
+
     +p {
         padding-top: .5em;
+    }
+
+    a {
+        color: $color_text_darker;
+        text-decoration: underline;
     }
 }
 
@@ -434,7 +427,7 @@ address span {
 }
 
 .badge {
-    border-radius: 25px;
+    border-radius: 15px;
     padding: .85em 1.5em;
     background-color: $border_grey;
     color: inherit;
@@ -453,11 +446,6 @@ address span {
     color: $brand_primary;
 }
 
-.badge-secondary {
-    background-color: $brand_accent_light;
-    color: $brand_accent;
-}
-
 .badge-info {
     background-color: $brand_amba_light;
     color: $brand_amba;
@@ -469,6 +457,6 @@ address span {
 }
 
 .badge-success {
-    background-color: $brand_accent_light;
-    color: $brand_accent;
+    background-color: $brand_primary_light;
+    color: $brand_primary;
 }
