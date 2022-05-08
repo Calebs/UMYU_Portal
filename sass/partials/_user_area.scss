@@ -27,6 +27,12 @@
 
 .media_info {
     flex: 1;
+
+    @include MQ-MAX(S) {
+        &.profileSummary {
+            text-align: center;
+        }
+    }
 }
 
 .userAvi {
@@ -139,5 +145,5 @@
     overflow: hidden;
     width: 100%;
     text-align: left;
-    color: $color_grey_dark;    
+    color: $color_grey_dark; 
 }
