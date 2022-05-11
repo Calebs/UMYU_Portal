@@ -20,11 +20,29 @@
 
 fieldset {
     padding-bottom: 10px;
+
     +fieldset {
         padding-top: 30px;
         margin-top: 20px;
         border-top: 1px solid $border_grey;
     }
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+
+    .form_group_item & {
+        margin-bottom: 15px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.formWidth1_3 {
+    max-width: 320px;
 }
 
 .form_group_item {
@@ -33,13 +51,14 @@ fieldset {
 
 .form_row_title {
     position: relative;
-    @include MQ(M) {
-        font-size: 16px;
-        text-align: right;
-    }
+    
+    // @include MQ(M) {
+    //     font-size: 16px;
+    //     text-align: right;
+    // }
 }
 
-.form_body {
+.fieldSetFormGroup {
     max-width: 600px;
 }
 
@@ -66,11 +85,6 @@ fieldset {
     .labeledForm & {
         line-height: 55px;
     }
-}
-
-.form-group {
-    position: relative;
-    margin-bottom: 10px;
 }
 
 input {

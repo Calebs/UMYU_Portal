@@ -122,6 +122,20 @@ button {
     }
 }
 
+.btn-outline-default {
+    background-color: transparent;
+    border: 1px solid $border_grey;
+    color: $border_grey_dark;
+    fill: $border_grey_dark;
+    &:hover,
+    &:focus {
+        background-color: white;
+        color: $color_text;
+        fill: $color_text;
+        border-color: transparent;
+    }
+}
+
 .btn-default {
     background-color: transparent;
     color: $color_text;
@@ -266,5 +280,27 @@ button {
         font-weight: 600;
         color: $brand_primary;
         background-color: white;
+    }
+}
+
+.pageNavTab {
+    border-bottom: 1px solid $border_grey_light;
+}
+
+.productNav_item + .productNav_item {
+    margin-left: 15px;
+}
+
+.productNav_item_link {
+    color: $border_grey_dark;
+    padding-bottom: 10px;
+    display: block;
+
+    &.active, &:hover, &:focus {
+        color: $color_text;
+    }
+
+    &.active {
+        box-shadow: inset 0 -3px 0 $brand_primary;
     }
 }

@@ -66,7 +66,7 @@
                             <h4 class="font-sm caps_upper font-regular color__grey_light">Main Menu</h4>
                         </header>
                         <ul class="sidebarNavMain">
-                            <li class="sidebarNavItem active">
+                            <li class="sidebarNavItem">
                                 <a href="dashboard.html" class="sidebarItem_link">
                                     <span class="navItemIcon"> 
                                         <svg class="cust_icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -126,7 +126,7 @@
                                     <span class="navItemLabel">Result Manager</span>
                                 </a>
                             </li>
-                            <li class="sidebarNavItem">
+                            <li class="sidebarNavItem active">
                                 <a href="student_profile.html" class="sidebarItem_link">
                                     <span class="navItemIcon">
                                         <svg class="cust_icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -162,122 +162,216 @@
                     <div class="container">
                         <header class="page_header">
                             <div class="pageTitleHolder">
-                                <h2 class="title title_md font-bold color__black">Welcome, Damilola</h2>
+                                <h2 class="title title_md font-bold color__black"></h2>
                             </div>
                             <div class="pryControlHolder">
+                                <a href="student_profile.html" class="btn btn-sm btn-outline-default">
+                                    <span class="btnIcon">
+                                        <svg class="cust_icon"  viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.99999 7.55732L11.3 4.25732L12.2427 5.19999L8.94266 8.49999L12.2427 11.8L11.3 12.7427L7.99999 9.44266L4.69999 12.7427L3.75732 11.8L7.05732 8.49999L3.75732 5.19999L4.69999 4.25732L7.99999 7.55732Z"/>
+                                        </svg>                                                         
+                                    </span>
+                                    <span class="btnLabel hidden-sm">Exit</span>
+                                </a>
                             </div>
                         </header>
 
                         <div class="paneInner ">
-                            <div class="row">
-                                <div class="contentPanel col-md-7 order-2 order-md-1">
-                                    <div class="panelWrapper">
-                                        <div class="profileMast media_item margin_bottom_md">
-                                            <figure class="profilveAvi media_figure">
-                                                <div class="userAvi avi_xl">
-                                                    <img src="./img/defaultAvi.png" alt="">
+                            <div class="contentPanel">
+                                <div class="panelWrapper">
+
+                                    <h3 class="title title_md color__black margin_bottom_md">Edit Profile</h3>
+
+                                    <nav class="pageNavTab margin_bottom_lg">
+                                        <ul class="nav">
+                                            <li class="productNav_item font-md">
+                                                <a href="edit_profile.html" class="productNav_item_link active">Bio Data</a>
+                                            </li>
+                                            <li class="productNav_item font-md">
+                                                <a href="edit_nxt_kin.html" class="productNav_item_link">Next of Kin</a>
+                                            </li>
+                                            <li class="productNav_item font-md">
+                                                <a href="edit_health.html" class="productNav_item_link">Health Record</a>
+                                            </li>
+                                            <li class="productNav_item font-md">
+                                                <a href="edit_sponsor.html" class="productNav_item_link">Sponsor</a>
+                                            </li>
+                                            <li class="productNav_item font-md">
+                                                <a href="edit_entryMode.html" class="productNav_item_link">Entry Mode</a>
+                                            </li>
+                                        </ul>
+                                    </nav>   
+                                    
+                                    <h4 class="title title_sm caps_upper margin_bottom_md">Your bio data</h4>
+
+                                    <fieldset>
+                                        <div class="fieldSetFormGroup">
+                                            <div class="row form-group">
+                                                <div class="form_group_item form_row_title col-md-4">
+                                                    <label class="control-label color__grey_dark caps_upper">Gender</label>
                                                 </div>
-                                            </figure>
-                                            <div class="profileSummary media_info">
-                                                <div class="userInfo margin_bottom_sm">
-                                                    <h3 class="title title_md font-bold color__black">Adeyemi Olutayo</h3>
-                                                    <div class="metaList margin_bottom_sm">
-                                                        <div class="metaItem">
-                                                            <span class="metaLabel">Matric No:</span>
-                                                            <span class="metaValue color__dark">021933</span>
-                                                        </div>
-                                                        <div class="metaItem">
-                                                            <span class="metaLabel">Gender:</span>
-                                                            <span class="metaValue color__dark">Male</span>
-                                                        </div>
+                                                <div class="form_group_item col-md-8">
+                                                    <div class="radio-inline">
+                                                        <label for="ugender_0">
+                                                            <input type="radio" checked id="ugender_0" name="genderOpt">
+                                                            <span>Male</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="radio-inline">
+                                                        <label for="ugender_1">
+                                                            <input type="radio" id="ugender_1" name="genderOpt">
+                                                            <span>Female</span>
+                                                        </label>
                                                     </div>
                                                 </div>
-                                                <a href="edit_profile.html" class="btn-link">
-                                                    <span class="btnIcon">
-                                                        <i class="cust_icon icon_editProfile"></i>
-                                                    </span>
-                                                    <span class="btnLabel">Edit Profile</span>
-                                                </a>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="form_group_item form_row_title col-md-4">
+                                                    <label class="control-label color__grey_dark caps_upper">Phone Number</label>
+                                                </div>
+                                                <div class="form_group_item col-md-8">
+                                                    <input type="text" class="form-control" placeholder="Enter your phone number">
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="form_group_item form_row_title col-md-4">
+                                                    <label class="control-label color__grey_dark caps_upper">Email Address</label>
+                                                </div>
+                                                <div class="form_group_item col-md-8">
+                                                    <input type="text" class="form-control" value="dorcas@umyu.edu.ng">
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="form_group_item form_row_title col-md-4">
+                                                    <label class="control-label color__grey_dark caps_upper">Marital Status</label>
+                                                </div>
+                                                <div class="form_group_item col-md-8">
+                                                    <select class="form-control">
+                                                        <option>Married</option>
+                                                        <option>Single</option>
+                                                        <option>Widowed</option>
+                                                        <option>Divorced</option>
+                                                        <option>Undisclosed</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
-                                        <ul class="verticalListGroup">
-                                            <li class="ListGroupItem">
-                                                <div class="metaItem">
-                                                    <div class="metaLabel caps_upper">Program:</div>
-                                                    <div class="metaValue font-bold color__dark">
-                                                        Post Graduate Diploma
+                                    </fieldset>
+
+                                    <fieldset>
+                                        <div class="fieldSetFormGroup">
+                                            <div class="row form-group">
+                                                <div class="form_group_item form_row_title col-md-4">
+                                                    <label class="control-label color__grey_dark caps_upper">Address</label>
+                                                </div>
+                                                <div class="form_group_item col-md-8">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" placeholder="Street address">
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-6">
+                                                            <label for="" class="control-label visually-hidden">Country</label>
+                                                            <select class="form-control">
+                                                                <option selected>Nigeria</option>
+                                                                <option>Ghana</option>
+                                                                <option>Benin Republic</option>
+                                                                <option>DR Congo</option>
+                                                                <option>Kenya</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-sm-6">
+                                                            <label for="" class="control-label visually-hidden">State/Province</label>
+                                                            <select class="form-control">
+                                                                <option selected>Lagos</option>
+                                                                <option>Oyo</option>
+                                                                <option>Ogun</option>
+                                                                <option>Kano</option>
+                                                                <option>Kaduna</option>
+                                                                <option>Anambra</option>
+                                                                <option>Imo</option>
+                                                                <option>Sokoto</option>
+                                                                <option>Benue</option>
+                                                                <option>Borno</option>
+                                                                <option>Niger</option>
+                                                                <option>Osun</option>
+                                                                <option>Ondo</option>
+                                                                <option>Jigawa</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <label for="" class="control-label visually-hidden">City</label>
+                                                            <input type="text" class="form-control" placeholder="City/Town">
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <label for="" class="control-label visually-hidden">Postal/Zip code</label>
+                                                            <input type="number" class="form-control" placeholder="Postal/Zip code">
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </li>
-                                            <li class="ListGroupItem">
-                                                <div class="metaItem">
-                                                    <div class="metaLabel caps_upper">Field of Study:</div>
-                                                    <div class="metaValue font-bold color__dark">
-                                                        M.A (Ed) English Language
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset>
+                                        <div class="fieldSetFormGroup">
+                                            <div class="row form-group">
+                                                <div class="form_group_item form_row_title col-md-4">
+                                                    <label class="control-label color__grey_dark caps_upper">place of birth</label>
+                                                </div>
+                                                <div class="form_group_item col-md-8">
+                                                    <div class="row">
+                                                        <div class="form-group col-6">
+                                                            <label for="" class="control-label visually-hidden">Country</label>
+                                                            <select class="form-control">
+                                                                <option selected>Nigeria</option>
+                                                                <option>Ghana</option>
+                                                                <option>Benin Republic</option>
+                                                                <option>DR Congo</option>
+                                                                <option>Kenya</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-sm-6">
+                                                            <label for="" class="control-label visually-hidden">State/Province</label>
+                                                            <select class="form-control">
+                                                                <option selected>Lagos</option>
+                                                                <option>Oyo</option>
+                                                                <option>Ogun</option>
+                                                                <option>Kano</option>
+                                                                <option>Kaduna</option>
+                                                                <option>Anambra</option>
+                                                                <option>Imo</option>
+                                                                <option>Sokoto</option>
+                                                                <option>Benue</option>
+                                                                <option>Borno</option>
+                                                                <option>Niger</option>
+                                                                <option>Osun</option>
+                                                                <option>Ondo</option>
+                                                                <option>Jigawa</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <label for="" class="control-label visually-hidden">City</label>
+                                                            <input type="text" class="form-control" placeholder="City/Town">
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <label for="" class="control-label visually-hidden">Postal/Zip code</label>
+                                                            <input type="number" class="form-control" placeholder="Postal/Zip code">
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </li>
-                                            <li class="ListGroupItem">
-                                                <div class="metaItem">
-                                                    <div class="metaLabel caps_upper">Faculty:</div>
-                                                    <div class="metaValue font-bold color__dark">
-                                                        Education
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="ListGroupItem">
-                                                <div class="metaItem">
-                                                    <div class="metaLabel caps_upper">Department:</div>
-                                                    <div class="metaValue font-bold color__dark">
-                                                        Linguistics
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="ListGroupItem">
-                                                <div class="metaItem">
-                                                    <div class="metaLabel caps_upper">Level:</div>
-                                                    <div class="metaValue font-bold color__dark">
-                                                        200 Level
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="ListGroupItem">
-                                                <div class="metaItem">
-                                                    <div class="metaLabel caps_upper">Session:</div>
-                                                    <div class="metaValue font-bold color__dark">
-                                                        2021/2022
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="ListGroupItem">
-                                                <div class="metaItem">
-                                                    <div class="metaLabel caps_upper">Registration Status:</div>
-                                                    <div class="metaValue font-bold color__dark">
-                                                        <span class="badge badge-danger">Not Registered</span>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-md-5 updatesSidebar order-1 order-md-2">
-                                    <div class="contentSidebarWraper centered">
-                                        <header class="panelheader">
-                                            <h4 class="title caps_upper font-bold">Updates</h4>
-                                        </header>
-                                        <ul class="updatesList">
-                                            <li class="updateListItem">
-                                                <a href="#" class="updateItemWrapper">
-                                                   <p>Course Registration for 2021/2022 session is now open. <span>Register your courses here</span></p> 
-                                                </a>
-                                            </li>
-                                            <li class="updateListItem">
-                                                <a href="#" class="updateItemWrapper">
-                                                   <p>The payment portal for 2021/2022 is open. <span>Pay your fees here</span></p> 
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                            </div>
+
+                                            <div class="section_cto margin_top_lg text-right">
+                                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                                            </div>
+
+                                        </div>
+                                    </fieldset>
+
                                 </div>
                             </div>
                         </div>
