@@ -195,7 +195,6 @@ body {
     width: auto;
     position: relative;
     max-width: 1170px;
-    
     @include MQ(M) {
         .mainContentWrapper & {
             padding-left: 30px;
@@ -275,11 +274,9 @@ h6 {
 p {
     margin: 0;
     @include break-inside(avoid);
-
     +p {
         padding-top: .5em;
     }
-
     a {
         color: $color_text_darker;
         text-decoration: underline;

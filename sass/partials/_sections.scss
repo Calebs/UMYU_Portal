@@ -4,17 +4,14 @@
     background-color: $color_white;
     height: 100%;
     padding-top: $header_height;
-
     &.is_active {
         overflow: hidden
     }
-
     &::before {
         /* never visible - used to check MQ in jQuery */
         display: none;
         content: 'mobile';
     }
-
     @include MQ(M) {
         padding-top: 0;
         &::before {
@@ -43,8 +40,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-image: url(../img/banners/auth_bg.jpg);
-
-    &::before{
+    &::before {
         content: "";
         position: absolute;
         width: 100%;
@@ -101,6 +97,8 @@
 .page_header {
     @include flexbox();
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 40px;
     @include MQ(M) {
         align-items: center;
@@ -129,11 +127,9 @@
     border-radius: 20px;
     padding: 40px 20px;
     box-shadow: 0px 10px 40px rgba(black, 0.15);
-
     .authFormBlock & {
         max-width: 500px;
     }
-
     @include MQ(M) {
         padding-right: 40px;
         padding-left: 40px;
@@ -164,14 +160,12 @@
 }
 
 // Dashboard
-
 .panelWrapper {
     background-color: white;
     border-radius: 20px;
     border: 1px solid $border_grey_light;
     width: 100%;
     padding: 20px 15px;
-
     @include MQ(M) {
         padding: 40px 50px;
     }
@@ -186,7 +180,6 @@
 .contentSidebarWraper {
     clear: both;
     margin-bottom: 30px;
-    
     @include MQ(M) {
         max-width: 320px;
     }

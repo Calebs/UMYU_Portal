@@ -6,7 +6,6 @@ header[role="banner"] {
     height: $header_height;
     z-index: $header-zindex;
     @include font-smoothing;
-
     [class*="container"] {
         height: 100%;
         position: relative;
@@ -18,15 +17,13 @@ header[role="banner"] {
     @include backface-visibility(hidden);
     border-bottom: 1px solid $border_grey;
     background-color: white;
-    
     @include MQ(M) {
         display: none;
     }
-
 }
 
 .navbarWrapper {
-    @include flexbox();    
+    @include flexbox();
     z-index: 1;
     width: 100%;
     height: 100%;
@@ -49,8 +46,7 @@ header[role="banner"] {
     z-index: 5;
     float: left;
     flex-shrink: 0;
-
-    > * + * {
+    >*+* {
         padding-left: 20px;
     }
 }
@@ -65,7 +61,6 @@ header[role="banner"] {
 .navBarItemCenter {
     flex-grow: 1;
     justify-content: center;
-
     @include MQ-MAX(L) {
         width: 100%;
     }
@@ -74,16 +69,25 @@ header[role="banner"] {
 .sidbarLogoHolder {
     clear: both;
     padding: 0 20px 30px;
-
     @include MQ-MAX(M) {
         display: none;
     }
 }
 
+.sideLogoWrapper {
+    display: block;
+    padding: 0;
+}
+
 .brand_img {
     display: block;
-    
-    header[role="banner"]  &{
+    width: 60px;
+    height: 60px;
+    @include MQ(M) {
+        width: 96px;
+        height: 96px;
+    }
+    header[role="banner"] & {
         height: $header_height;
     }
 }
@@ -93,12 +97,10 @@ header[role="banner"] {
     display: inline-block;
     position: relative;
     height: 100%;
-
     .mainAppHeader & {
         width: 42px;
         line-height: $header_height;
     }
-        
     >img {
         vertical-align: middle;
         display: inline-block;
@@ -170,7 +172,7 @@ header[role="banner"] {
     @include transition(1s ease);
     overflow: hidden;
 }
-  
+
 .mainSidebar {
     height: 100%;
     position: relative;
@@ -178,7 +180,6 @@ header[role="banner"] {
     @include transition(all .6s cubic-bezier(.68, .34, .15, 1));
     transform-origin: left;
     width: 270px;
-
     @include MQ-MAX(M) {
         left: 0;
         position: fixed;
@@ -190,7 +191,6 @@ header[role="banner"] {
         flex-direction: column;
         @include transform(scaleX(0));
     }
-
     .is-active & {
         @include transform(scaleX(1));
         visibility: visible;
@@ -199,13 +199,12 @@ header[role="banner"] {
         @include transition(transform .8s cubic-bezier(.68, .34, .15, 1));
     }
 }
-  
+
 .mainContentWrapper {
     width: 100%;
     height: 100%;
     @include transition(1s ease);
     overflow: auto;
-
     @include MQ(M) {
         width: calc(100% - 270px);
     }
@@ -217,7 +216,7 @@ header[role="banner"] {
     position: relative;
 }
 
-.sidebarMainHolder{
+.sidebarMainHolder {
     width: 100%;
     padding: 30px 0;
     position: relative;
@@ -229,8 +228,7 @@ header[role="banner"] {
 
 .sidebarNavItem {
     display: block;
-
-    + .sidebarNavItem {
+    +.sidebarNavItem {
         margin-top: 5px;
     }
 }
@@ -245,15 +243,15 @@ header[role="banner"] {
     fill: $border_grey_dark;
     position: relative;
     @include transition(.4s all ease-in-out 0s);
-
-    .active > &, &:hover, &:focus {
+    .active>&,
+    &:hover,
+    &:focus {
         color: $brand_black;
         fill: $brand_primary;
         font-weight: 600;
     }
-
-    .active > & {
-        background-color:$brand_primary_light;
+    .active>& {
+        background-color: $brand_primary_light;
     }
 }
 
